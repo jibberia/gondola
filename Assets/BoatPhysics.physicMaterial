@@ -11,6 +11,6 @@ PhysicMaterial:
   bounciness: 0
   frictionCombine: 0
   bounceCombine: 0
-  frictionDirection2: {x: 0, y: 0, z: 1}
+  frictionDirection2: {x: 0, y: 1, z: 0}
   dynamicFriction2: 2
   staticFriction2: 2

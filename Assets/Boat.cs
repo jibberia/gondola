@@ -5,7 +5,8 @@ public class Boat : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		var rb = GetComponent<Rigidbody>();
+		rb.AddForce(0, 200, 0);
 	}
 	
 	// Update is called once per frame
