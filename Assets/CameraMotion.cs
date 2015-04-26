@@ -13,6 +13,7 @@ public class CameraMotion : MonoBehaviour {
 	
 	void Update () {
 		Vector3 pos = this.transform.position;
+		pos.x = boat.transform.position.x / 2f;
 		pos.y = boat.transform.position.y + camBoatYDifference;
 		this.transform.position = pos;
 	}
