@@ -1,2 +1,2 @@
 # gondola
-a gondola game. uses Unity 6.01.
+a gondola game. uses Unity 5.01.
