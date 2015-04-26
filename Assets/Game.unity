@@ -302,8 +302,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 256990668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: 0}
-  m_LocalScale: {x: .5, y: 20, z: 1}
+  m_LocalPosition: {x: -3, y: 495, z: 0}
+  m_LocalScale: {x: .5, y: 1000, z: 1}
   m_Children: []
   m_Father: {fileID: 1451779531}
   m_RootOrder: 2
@@ -551,6 +551,7 @@ GameObject:
   - 92: {fileID: 1178500195}
   - 124: {fileID: 1178500194}
   - 81: {fileID: 1178500193}
+  - 114: {fileID: 1178500198}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -623,6 +624,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1178500198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1178500192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7474cd5ec03824262a8eba8d9da6dab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 722624089}
 --- !u!1 &1450430937
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,7 +653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1450430938
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -764,8 +777,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1773737946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 10, z: 1}
+  m_LocalPosition: {x: 0, y: 495, z: 0}
+  m_LocalScale: {x: 6, y: 1000, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -866,8 +879,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1935182407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: 0}
-  m_LocalScale: {x: .5, y: 20, z: 1}
+  m_LocalPosition: {x: 3, y: 495, z: 0}
+  m_LocalScale: {x: .5, y: 1000, z: 1}
   m_Children: []
   m_Father: {fileID: 1451779531}
   m_RootOrder: 1
