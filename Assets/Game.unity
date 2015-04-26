@@ -208,7 +208,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 144294216}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 3df910ecf0e4044d0963fa39d653cfd5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: .5
@@ -389,6 +389,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 722624090}
   - 54: {fileID: 722624091}
+  - 114: {fileID: 722624092}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -421,11 +422,22 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: .0500000007
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 56
   m_CollisionDetection: 0
+--- !u!114 &722624092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 722624089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c670e2609624a88979f625fd147929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &738292979
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,6 +736,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1773737948}
   - 65: {fileID: 1773737947}
+  - 54: {fileID: 1773737950}
   - 114: {fileID: 1773737949}
   m_Layer: 0
   m_Name: Water
@@ -752,7 +765,7 @@ Transform:
   m_GameObject: {fileID: 1773737946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 20, z: 1}
+  m_LocalScale: {x: 6, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -768,7 +781,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 722624089}
+  poleTransform: {fileID: 738292980}
   paddleEnergyScalar: 50
+--- !u!54 &1773737950
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1773737946}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1935182407
 GameObject:
   m_ObjectHideFlags: 0
