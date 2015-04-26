@@ -20,12 +20,10 @@ public class WaterInput : MonoBehaviour {
 			if (Physics.Raycast(ray, out hit)) {
 				Debug.Log("hit " + hit.transform.gameObject.name + " at " + hit.point.ToString());
 
-				Vector3 direction = hit.point - boat.transform.position;
-
-				boatrb.AddForceAtPosition(-direction * paddleEnergyScalar, hit.point);
-
+				Vector3 direction = boat.transform.position - hit.point;
 				Debug.DrawRay(hit.point, direction, Color.green, 5f);
-//				EditorApplication.isPaused = true;
+
+				boatrb.AddForceAtPosition(direction * paddleEnergyScalar, hit.point);
 			}
 		}
 	}
