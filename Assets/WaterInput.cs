@@ -6,7 +6,7 @@ public class WaterInput : MonoBehaviour {
 
 	public GameObject boat;
 	public Transform poleTransform;
-	public float paddleEnergyScalar = 50f;
+	public float poleEnergyScalar = 50f;
 
 	private Rigidbody boatRigidbody;
 
@@ -21,7 +21,8 @@ public class WaterInput : MonoBehaviour {
 			if (Physics.Raycast(ray, out waterHit)) {
 //				Debug.Log("hit " + waterHit.transform.gameObject.name + " at " + waterHit.point.ToString());
 
-				Vector3 direction = boat.transform.position - waterHit.point;
+//				Vector3 direction = boat.transform.position - waterHit.point;
+				Vector3 direction = poleTransform.position - waterHit.point;
 				Debug.DrawRay(waterHit.point, direction, Color.green, 5f);
 
 				// now raycast from water hit point to boat to find position we hit it
@@ -29,7 +30,7 @@ public class WaterInput : MonoBehaviour {
 				RaycastHit boatHit;
 				if (Physics.Raycast(boatRay, out boatHit)) {
 					Debug.DrawRay(boatHit.point, waterHit.point - boatHit.point, Color.red, 5f);
-					boatRigidbody.AddForceAtPosition(direction * paddleEnergyScalar, boatHit.point);
+					boatRigidbody.AddForceAtPosition(direction * poleEnergyScalar, boatHit.point);
 				}
 
 //				EditorApplication.isPaused = true;
