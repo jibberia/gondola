@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 
 public class WaterInput : MonoBehaviour {
 
 	public GameObject boat;
+	public float paddleEnergyScalar = 50f;
 
 	private Rigidbody boatrb;
 
@@ -20,7 +22,10 @@ public class WaterInput : MonoBehaviour {
 
 				Vector3 direction = hit.point - boat.transform.position;
 
-				boatrb.AddForceAtPosition(direction.normalized, hit.point);
+				boatrb.AddForceAtPosition(-direction * paddleEnergyScalar, hit.point);
+
+				Debug.DrawRay(hit.point, direction, Color.green, 5f);
+//				EditorApplication.isPaused = true;
 			}
 		}
 	}
