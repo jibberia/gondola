@@ -558,7 +558,7 @@ GameObject:
   - 136: {fileID: 774919516}
   - 23: {fileID: 774919515}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Gondolier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

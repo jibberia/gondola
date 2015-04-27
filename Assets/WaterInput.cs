@@ -5,6 +5,7 @@ using System.Collections;
 public class WaterInput : MonoBehaviour {
 
 	public GameObject boat;
+	// position of pole on gondola (somewhere near rear)
 	public Transform poleTransform;
 	public float poleEnergyScalar = 50f;
 
@@ -16,35 +17,23 @@ public class WaterInput : MonoBehaviour {
 	
 	void Update () {
 		if (Input.GetButtonDown("Fire1")) {
+			// get water coordinates of screen click/tap
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit waterHit;
-			if (Physics.Raycast(ray, out waterHit)) {
-//				Debug.Log("hit " + waterHit.transform.gameObject.name + " at " + waterHit.point.ToString());
+			Physics.Raycast(ray, out waterHit); // assume success
 
-//				Vector3 direction = boat.transform.position - waterHit.point;
-				Vector3 direction = poleTransform.position - waterHit.point;
-				Debug.DrawRay(waterHit.point, direction, Color.green, 5f);
+			// get direction of pointer/finger to gondola pole
+			Vector3 direction = poleTransform.position - waterHit.point;
+			Debug.DrawRay(waterHit.point, direction, Color.green, 5f);
 
-				// now raycast from water hit point to boat to find position we hit it
-				Ray boatRay = new Ray(waterHit.point, direction);
-				RaycastHit boatHit;
-				if (Physics.Raycast(boatRay, out boatHit)) {
-					Debug.DrawRay(boatHit.point, waterHit.point - boatHit.point, Color.red, 5f);
-					boatRigidbody.AddForceAtPosition(direction * poleEnergyScalar, boatHit.point);
-				}
+			// now raycast from water hit point to boat to find hull position of hit
+			Ray boatRay = new Ray(waterHit.point, direction);
+			RaycastHit boatHit;
+			Physics.Raycast(boatRay, out boatHit); // assume success
 
-//				EditorApplication.isPaused = true;
-			}
+			// add force at the point we hit
+			boatRigidbody.AddForceAtPosition(direction * poleEnergyScalar, boatHit.point);
+			Debug.DrawRay(boatHit.point, waterHit.point - boatHit.point, Color.red, 5f);
 		}
 	}
-
-//	void OnCollisionEnter(Collision c) {
-//		Debug.Log("water collided with " + c.gameObject.name);
-//	}
-//	void OnCollisionStay(Collision c) {
-//		Debug.Log("water stayed colliding with " + c.gameObject.name);
-//	}
-//	void OnTriggerEnter(Collider c) {
-//		Debug.Log("water trigger enter with " + c.gameObject.name);
-//	}
 }
